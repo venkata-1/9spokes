@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: p2
+  namespace: staging
+  labels:
+    k8s-app: p2
+spec:
+  selector:
+    matchLabels:
+      name: p2
+  template:
+    metadata:
+      labels:
+        name: p2
+    spec:
+      containers:
+        - name: p2
+          image: 639506537181.dkr.ecr.ca-central-1.amazonaws.com/9spokes:latest
+          resources:
+            limits:
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 200Mi

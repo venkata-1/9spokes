@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello
+  labels:
+    name: hello
+spec:
+  containers:
+    - name: nginx
+      image: 639506537181.dkr.ecr.ca-central-1.amazonaws.com/9spokes:latest
+      ports:
+        - containerPort: 8080

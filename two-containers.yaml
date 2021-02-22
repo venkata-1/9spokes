@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: p3
+spec:
+
+  volumes:
+    - name: shared-data
+      emptyDir: {}
+
+  containers:
+
+    - name: p3-one-container
+      image: 639506537181.dkr.ecr.ca-central-1.amazonaws.com/9spokes:latest
+      volumeMounts:
+        - name: shared-data
+          mountPath: /app
+
+    - name: p3-two-container
+      image: 639506537181.dkr.ecr.ca-central-1.amazonaws.com/9spokes:latest
+      volumeMounts:
+        - name: shared-data
+          mountPath: /app
